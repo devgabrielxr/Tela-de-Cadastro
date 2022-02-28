@@ -4,7 +4,7 @@ using Models.Entidades.Enum;
 
 namespace Models.Entidades
 {
-    public class Usuario
+    public class UsuarioViewModel
     {
 
         public int Id { get; set; }
@@ -29,7 +29,7 @@ namespace Models.Entidades
 
         public List<Endereco> EnderecoUsuario { get; set; }
 
-        public Usuario()
+        public UsuarioViewModel()
         {
             EnderecoUsuario = new List<Endereco>();
         }

@@ -8,6 +8,6 @@ namespace telaCadastro.Repository
 {
     interface IRepository
     {
-        List<Usuario> buscaToddos();
+        List<UsuarioViewModel> buscaToddos();
     }
 }

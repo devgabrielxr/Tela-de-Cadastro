@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using telaCadastro.Repository;
+using telaCadastro.Models;
 
 namespace telaCadastro.Services
 {
@@ -16,9 +17,10 @@ namespace telaCadastro.Services
             repository = new RepositoryUsuario();
         }
 
-        public void CadastrarUsuario(Usuario usuario)
+        public void CadastrarUsuario(Models.UsuarioViewModel usuarioCadastrar)
         {
-            repository.buscaToddos();           
+            repository.buscaToddos();
         }
+
     }
 }

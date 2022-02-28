@@ -20,14 +20,14 @@ namespace telaCadastro.Repository
             _conecaoBD = new SqlConnection(@"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DBcadastro;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
-        public List<Usuario> buscaToddos()
+        public List<UsuarioViewModel> buscaToddos()
         {
 
             var consulta = "select * from usuario;";
 
-            var listaUsuario = new List<Usuario>();
+            var listaUsuario = new List<UsuarioViewModel>();
 
-            listaUsuario = _conecaoBD.Query<Usuario>(consulta).ToList();
+            listaUsuario = _conecaoBD.Query<UsuarioViewModel>(consulta).ToList();
 
             return listaUsuario;
         }

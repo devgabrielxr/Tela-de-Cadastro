@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Models.Entidades;
+using telaCadastro.Models;
 
 
 namespace telaCadastro.Services
 {
     public interface IServiceCadastro
     {
-       void CadastrarUsuario(Usuario usuario);
+       void CadastrarUsuario(UsuarioViewModel usuarioCadastrar);
     }
 }

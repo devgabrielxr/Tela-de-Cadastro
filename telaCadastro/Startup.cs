@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using telaCadastro.Repository;
+using telaCadastro.Services;
 
 namespace telaCadastro
 {
@@ -26,8 +27,8 @@ namespace telaCadastro
         {
             services.AddControllersWithViews();
 
-            services.AddScoped<IRepository, RepositoryUsuario>();
-
+            services.AddTransient<IRepository, RepositoryUsuario>();
+            services.AddTransient<IServiceCadastro, ServiceUsuarios>();
 
         }
 
