@@ -25,6 +25,8 @@ namespace Models.Entidades
 
         public DateTime DataCadastro { get; set; }
 
+        public Telefone CelularUsuario { get; set; }
+
         public List<Endereco> EnderecoUsuario { get; set; }
 
         public Usuario()

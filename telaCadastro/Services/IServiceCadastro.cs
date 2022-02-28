@@ -7,7 +7,7 @@ using Models.Entidades;
 
 namespace telaCadastro.Services
 {
-    interface IServiceCadastro
+    public interface IServiceCadastro
     {
        void CadastrarUsuario(Usuario usuario);
     }
