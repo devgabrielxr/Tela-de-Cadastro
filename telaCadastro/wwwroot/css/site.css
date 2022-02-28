@@ -96,7 +96,7 @@ body {
     font-size: 30px;
 }
 
-.flex-grow-1{
-    display: flex;
-    justify-content: flex-end;
+#bprox{
+    margin-top: 5%;
 }
+
