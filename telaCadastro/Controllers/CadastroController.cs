@@ -34,9 +34,11 @@ namespace telaCadastro.Controllers
 
             try
             {
-
                 _servicoCadastro.CadastrarUsuario(usuario);
 
+                // var idUsuarioCadastrado = _servicoCadastro.CadastrarUsuario(usuario);
+
+                // return RedirectToAction(nameof(Endereco{idUsuarioCadastrado}));
 
                 return RedirectToAction(nameof(Index));
             }
@@ -46,6 +48,7 @@ namespace telaCadastro.Controllers
                 return NotFound();
             }
         }
+
 
     }
 }

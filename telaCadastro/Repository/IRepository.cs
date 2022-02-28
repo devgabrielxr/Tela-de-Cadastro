@@ -8,6 +8,7 @@ namespace telaCadastro.Repository
 {
     interface IRepository
     {
-        List<UsuarioViewModel> buscaToddos();
+        List<Usuario> buscaToddos();
+        void CadastrarUsuario(Usuario UsuarioInsercao);
     }
 }

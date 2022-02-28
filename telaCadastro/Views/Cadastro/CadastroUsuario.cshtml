@@ -8,7 +8,6 @@
 
 }
 
-
 @using (Html.BeginForm("CadastroUsuario", "Cadastro"))
 {
     <div class="container">
@@ -19,26 +18,38 @@
             <div class="col-12 col-md-6">
                 <h5 id="registrar">@Html.LabelFor(x => x.NomeCompleto)</h5>
                 @Html.TextBoxFor(x => x.NomeCompleto)
+
+                <span asp-validation-for="@Model.NomeCompleto" class="text-danger"></span>
             </div>
             <div class="col-12 col-md-6">
                 <h5>@Html.LabelFor(x => x.Email)</h5>
                 @Html.TextBoxFor(x => x.Email)
+
+                <span asp-validation-for="@Model.Email" class="text-danger"></span>
             </div>
             <div class="col-12 col-md-6">
                 <h5>@Html.LabelFor(x => x.DataNascimento)</h5>
                 @Html.TextBoxFor(x => x.DataNascimento)
+
+                <span asp-validation-for="@Model.DataNascimento" class="text-danger"></span>
             </div>
             <div class="col-12 col-md-6">
                 <h5>@Html.LabelFor(x => x.CPF)</h5>
                 @Html.TextBoxFor(x => x.CPF)
+
+                <span asp-validation-for="@Model.CPF" class="text-danger"></span>
             </div>
             <div class="col-12 col-md-6">
                 <h5>@Html.LabelFor(x => x.RG)</h5>
                 @Html.TextBoxFor(x => x.RG)
+
+                <span asp-validation-for="@Model.RG" class="text-danger"></span>
             </div>
             <div class="col-12 col-md-6">
-                <h5>@Html.LabelFor(x => x.CelularUsuario)</h5>
-                @Html.TextBoxFor(x => x.CelularUsuario)
+                <h5>@Html.LabelFor(x => x.NumeroCelular)</h5>
+                @Html.TextBoxFor(x => x.NumeroCelular)
+
+
             </div>
             <div class="col-12 col-md-6">
                 <h5>@Html.LabelFor(x => x.Genero)</h5>
@@ -54,4 +65,9 @@
 
         </div>
     </div>
+}
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

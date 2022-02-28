@@ -4,14 +4,14 @@ using Models.Entidades.Enum;
 
 namespace Models.Entidades
 {
-    public class UsuarioViewModel
+    public class Usuario
     {
 
         public int Id { get; set; }
 
         public string NomeCompleto { get; set; }
 
-        public DateTime DataNascimento { get; set; }
+       /* public DateTime DataNascimento { get; set; }*/
 
         public string Genero { get; set; }
 
@@ -25,11 +25,12 @@ namespace Models.Entidades
 
         public DateTime DataCadastro { get; set; }
 
-        public Telefone CelularUsuario { get; set; }
+        /*
+        public Telefone CelularUsuario { get; set; }*/
 
         public List<Endereco> EnderecoUsuario { get; set; }
 
-        public UsuarioViewModel()
+        public Usuario()
         {
             EnderecoUsuario = new List<Endereco>();
         }

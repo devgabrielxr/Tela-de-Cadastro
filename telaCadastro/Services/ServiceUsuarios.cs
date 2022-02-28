@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using telaCadastro.Repository;
 using telaCadastro.Models;
+using Models.Entidades.Enum;
+using System.Globalization;
 
 namespace telaCadastro.Services
 {
@@ -17,9 +19,23 @@ namespace telaCadastro.Services
             repository = new RepositoryUsuario();
         }
 
-        public void CadastrarUsuario(Models.UsuarioViewModel usuarioCadastrar)
+        public void CadastrarUsuario(UsuarioViewModel usuarioCadastrar)
         {
-            repository.buscaToddos();
+            var usuarioInsercao = new Usuario()
+            {
+                NomeCompleto = usuarioCadastrar.NomeCompleto,
+               /* DataNascimento = usuarioCadastrar.DataNascimento, // a tratar pois pode gerar um possiver erro de conversao da tela pro banco*/
+                CPF = usuarioCadastrar.CPF,
+                Email = usuarioCadastrar.Email,
+                Genero = usuarioCadastrar.Genero,
+                RG = usuarioCadastrar.Genero,
+               /* CelularUsuario = usuarioCadastrar.CelularUsuario,*/
+                DataCadastro = DateTime.Now,
+                Status = StatusUsuario.Ativo
+            };
+
+            repository.CadastrarUsuario(usuarioInsercao);
+
         }
 
     }

@@ -17,21 +17,45 @@ namespace telaCadastro.Repository
 
         public RepositoryUsuario()
         {
-            _conecaoBD = new SqlConnection(@"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DBcadastro;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            _conecaoBD = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DBcadastro;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
-        public List<UsuarioViewModel> buscaToddos()
+        public List<Usuario> buscaToddos()
         {
 
             var consulta = "select * from usuario;";
 
-            var listaUsuario = new List<UsuarioViewModel>();
+            var listaUsuario = new List<Usuario>();
 
-            listaUsuario = _conecaoBD.Query<UsuarioViewModel>(consulta).ToList();
+            listaUsuario = _conecaoBD.Query<Usuario>(consulta).ToList();
 
             return listaUsuario;
         }
 
+        public void CadastrarUsuario(Usuario UsuarioInsercao)
+        {
+            var query = "insert into UsuarioTeste(NomeCompleto,Genero,CPF,RG,Status,Email)values(@NomeCompleto,@Genero,@CPF,@RG,@Status,@Email)";
+
+            _conecaoBD.Open();
+
+            var transaction = _conecaoBD.BeginTransaction();
+
+            try
+            {
+
+                _conecaoBD.Execute(query, UsuarioInsercao, transaction);
+
+
+            }
+            catch (Exception e)
+            {
+                transaction.Rollback();
+            }
+            finally{
+                _conecaoBD.Close();
+            }
+
+        }
 
     }
 }
