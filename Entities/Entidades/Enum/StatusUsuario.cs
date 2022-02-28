@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models.Entidades.Enum
 {
-    enum StatusUsuario
+    public enum StatusUsuario
     {
         Ativo = 1,
         Inativo = 2

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models.Entidades
 {
-    class Endereco
+    public class Endereco
     {
         public int id { get; set; }
         public string CEP { get; set; }

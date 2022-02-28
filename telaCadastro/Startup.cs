@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using telaCadastro.Repository;
 
 namespace telaCadastro
 {
@@ -24,6 +25,10 @@ namespace telaCadastro
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddScoped<IRepository, RepositoryUsuario>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

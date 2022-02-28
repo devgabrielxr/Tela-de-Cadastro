@@ -4,7 +4,7 @@ using Models.Entidades.Enum;
 
 namespace Models.Entidades
 {
-    class Usuario
+    public class Usuario
     {
 
         public int Id { get; set; }

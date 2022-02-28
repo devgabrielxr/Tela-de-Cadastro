@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models.Entidades.Enum
 {
-    enum TipoTelefone
+    public enum TipoTelefone
     {
         Residencial = 1,
         Comercial = 2,
