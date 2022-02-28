@@ -12,5 +12,11 @@ namespace telaCadastro.Controllers
         {
             return View();
         }
+
+        public IActionResult CadastroUsuario()
+        {
+            return View();
+        }
+
     }
 }
