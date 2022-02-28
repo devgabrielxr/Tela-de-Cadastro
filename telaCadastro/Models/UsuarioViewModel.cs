@@ -23,12 +23,9 @@ namespace telaCadastro.Models
 
         public string RG { get; set; }
 
-        [Required(ErrorMessage = "{0} Obrigatorio!")]
-        [EmailAddress(ErrorMessage = "Entre com um email valido.")]
         [Display(Name = "E-Mail")]
-        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        public Telefone CeularUsuario { get; set; }
+        public Telefone CelularUsuario { get; set; }
     }
 }

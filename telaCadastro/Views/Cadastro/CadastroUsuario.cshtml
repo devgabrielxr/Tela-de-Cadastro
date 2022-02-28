@@ -3,50 +3,55 @@
 @{
     ViewBag.Title = "Cadastre-se";
 }
-@{ 
-    Layout = "_Layout"; 
-    
+@{
+    Layout = "_Layout";
+
 }
-<div class="container">
-    <div class="col-12">
-        <h1 id="Titulo">Cadastre-se</h1>
+
+
+@using (Html.BeginForm("CadastroUsuario", "Cadastro"))
+{
+    <div class="container">
+        <div class="col-12">
+            <h1 id="Titulo">Cadastre-se</h1>
+        </div>
+        <div class="row gx-md-5">
+            <div class="col-12 col-md-6">
+                <h5 id="registrar">@Html.LabelFor(x => x.NomeCompleto)</h5>
+                @Html.TextBoxFor(x => x.NomeCompleto)
+            </div>
+            <div class="col-12 col-md-6">
+                <h5>@Html.LabelFor(x => x.Email)</h5>
+                @Html.TextBoxFor(x => x.Email)
+            </div>
+            <div class="col-12 col-md-6">
+                <h5>@Html.LabelFor(x => x.DataNascimento)</h5>
+                @Html.TextBoxFor(x => x.DataNascimento)
+            </div>
+            <div class="col-12 col-md-6">
+                <h5>@Html.LabelFor(x => x.CPF)</h5>
+                @Html.TextBoxFor(x => x.CPF)
+            </div>
+            <div class="col-12 col-md-6">
+                <h5>@Html.LabelFor(x => x.RG)</h5>
+                @Html.TextBoxFor(x => x.RG)
+            </div>
+            <div class="col-12 col-md-6">
+                <h5>@Html.LabelFor(x => x.CelularUsuario)</h5>
+                @Html.TextBoxFor(x => x.CelularUsuario)
+            </div>
+            <div class="col-12 col-md-6">
+                <h5>@Html.LabelFor(x => x.Genero)</h5>
+                @Html.TextBoxFor(x => x.Genero)
+            </div>
+
+            <div class="col-12 col-md-6">
+            </div>
+
+            <div class="col-12 col-md-6">
+                <input type="submit" class="btn btn-primary form-group" style="margin-top: 5%" value="Adicionar" />
+            </div>
+
+        </div>
     </div>
-    <div class="row gx-md-5">
-        <div class="col-12 col-md-6">
-            <h5 id="registrar">@Html.LabelFor(x => x.NomeCompleto)</h5>
-            @Html.TextBoxFor(x => x.NomeCompleto)
-        </div>
-        <div class="col-12 col-md-6">
-            <h5>@Html.LabelFor(x => x.Email)</h5>
-            @Html.TextBoxFor(x => x.Email)
-        </div>
-        <div class="col-12 col-md-6">
-            <h5>@Html.LabelFor(x => x.DataNascimento)</h5>
-            @Html.TextBoxFor(x => x.DataNascimento)
-        </div>
-        <div class="col-12 col-md-6">
-            <h5>@Html.LabelFor(x => x.CPF)</h5>
-            @Html.TextBoxFor(x => x.CPF)
-        </div>
-        <div class="col-12 col-md-6">
-            <h5>@Html.LabelFor(x => x.RG)</h5>
-            @Html.TextBoxFor(x => x.RG)
-        </div>
-        <div class="col-12 col-md-6">
-            <h5>@Html.LabelFor(x => x.CeularUsuario)</h5>
-            @Html.TextBoxFor(x => x.CeularUsuario)
-        </div>
-        <div class="col-12 col-md-6">
-            <h5>@Html.LabelFor(x => x.Genero)</h5>
-            @Html.TextBoxFor(x => x.Genero)
-        </div>
-
-        <div class="col-12 col-md-6">
-        </div>
-
-        <div class="col-12 col-md-6">
-            <button type="button" class="btn btn-primary" style="margin-top: 5%" onclick="location.href='@Url.Action("Controler", "")' ">Próximo</button>
-        </div>
-
-    </div>
-</div>
+}

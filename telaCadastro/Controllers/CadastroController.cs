@@ -29,7 +29,7 @@ namespace telaCadastro.Controllers
         }
 
         [HttpPost]
-        public IActionResult CadastrarUsuario(UsuarioViewModel usuario)
+        public IActionResult CadastroUsuario(UsuarioViewModel usuario)
         {
 
             try
